@@ -8,11 +8,16 @@
 
   <ItemGroup>
     <None Remove="Repository\" />
+    <None Remove="Contexts\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repository\" />
+    <Folder Include="Contexts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessObjects\BusinessObjects.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.15" />
   </ItemGroup>
 </Project>

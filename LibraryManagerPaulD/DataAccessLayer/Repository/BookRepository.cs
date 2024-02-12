@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using BusinessObjects.Entity;
+﻿using BusinessObjects.Entity;
+using DataAccessLayer.Contexts;
+using DataAccessLayer.Repository;
 
-namespace DataAccessLayer.Repository
+public class BookRepository : IGenericRepository<Book>
 {
-    public class BookRepository : IGenericRepository<Book>
+    private readonly LibraryContext _context;
+
+    public BookRepository(LibraryContext context)
     {
-        private List<Book> ListBooks = new List<Book>();
+        _context = context;
+    }
 
-        public IEnumerable<Book> GetAll()
-        {
-            var list = new List<Book>
-            {
-                new Book() { Id = 1, Name = "Book 1", Type = BookType.Fantasy, Rate = 2 },
-                new Book() { Id = 2, Name = "Book 2", Type = BookType.Fiction, Rate = 4 }
-            };
-            return list;
-        }
+    public IEnumerable<Book> GetAll()
+    {
+        return _context.Books.ToList();
+    }
 
-        public Book Get(int bookId)
-        {
-            return new Book(); ;
-        }
+    public Book Get(int id)
+    {
+        return _context.Books.Find(id);
     }
 }
-
