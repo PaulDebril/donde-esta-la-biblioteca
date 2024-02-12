@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Catalog;
 using BusinessObjects.Entity;
+using DataAccessLayer.Contexts;
 using DataAccessLayer.Repository;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -37,7 +39,8 @@ class Program
         return Host.CreateDefaultBuilder()
             .ConfigureServices(services =>
             {
-
+                services.AddDbContext<LibraryContext>(options =>
+                    options.UseSqlite("Data Source=/Users/paul/Documents/GitHub/donde-esta-la-biblioteca/ressources/library.db"));
                 services.AddScoped<ICatalogManager, CatalogManager>();
                 services.AddScoped<ICatalogService, CatalogService>();
                 services.AddScoped<IGenericRepository<Book>, BookRepository>();

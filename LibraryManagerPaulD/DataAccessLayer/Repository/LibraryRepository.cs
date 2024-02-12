@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using BusinessObjects.Entity;
+﻿using BusinessObjects.Entity;
 using DataAccessLayer.Contexts;
 using DataAccessLayer.Repository;
 
@@ -19,6 +18,6 @@ public class LibraryRepository : IGenericRepository<Library>
 
     public Library Get(int LibraryId)
     {
-        return _context.Libraries.FirstOrDefault(LibraryId);
+        return _context.Libraries.Find(LibraryId);
     }
 }

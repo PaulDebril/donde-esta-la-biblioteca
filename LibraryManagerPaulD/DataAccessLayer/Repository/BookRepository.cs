@@ -13,11 +13,11 @@ public class BookRepository : IGenericRepository<Book>
 
     public IEnumerable<Book> GetAll()
     {
-        return _context.Books.ToList();
+        return _context.Book.ToList();
     }
 
     public Book Get(int id)
     {
-        return _context.Books.Find(id);
+        return _context.Book.Find(id);
     }
 }

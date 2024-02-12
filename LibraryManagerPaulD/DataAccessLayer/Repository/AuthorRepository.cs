@@ -19,9 +19,9 @@ namespace DataAccessLayer.Repository
             return _context.Authors.ToList();
         }
 
-        public Author Get(int authorId)
+        public Author Get(int id_author)
         {
-            return _context.Authors.Find(authorId) ?? new Author();
+            return _context.Authors.Find(id_author) ?? new Author();
         }
     }
 }
