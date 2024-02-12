@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1706.8
@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{43BEC294
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer.Test", "Tests\BusinessLayer.Test\BusinessLayer.Test.csproj", "{5E17D1A8-D2EC-456E-BE29-6F51F42EC763}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Test", "Tests\BusinessLayer.Test\Services.Test\Services.Test.csproj", "{07DC3558-2773-4D4D-95C8-1ADEE508F217}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Test", "Tests\Services.Test\Services.Test.csproj", "{07DC3558-2773-4D4D-95C8-1ADEE508F217}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

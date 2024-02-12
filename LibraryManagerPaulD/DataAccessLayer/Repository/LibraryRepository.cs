@@ -19,6 +19,6 @@ public class LibraryRepository : IGenericRepository<Library>
 
     public Library Get(int LibraryId)
     {
-        return _context.Libraries.FirstOrDefault(LibraryId);
+        return _context.Libraries.First(x => x.Id == LibraryId);
     }
 }
