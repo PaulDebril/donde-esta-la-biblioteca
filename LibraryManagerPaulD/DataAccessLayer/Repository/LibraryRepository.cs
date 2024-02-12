@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using BusinessObjects.Entity;
+﻿using BusinessObjects.Entity;
 using DataAccessLayer.Contexts;
 using DataAccessLayer.Repository;
 

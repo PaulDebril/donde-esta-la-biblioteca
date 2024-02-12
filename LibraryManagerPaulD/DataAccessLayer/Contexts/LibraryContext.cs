@@ -7,14 +7,24 @@ namespace DataAccessLayer.Contexts
     public class LibraryContext : DbContext
     {
         public DbSet<Library> Libraries { get; set; }
-        public DbSet<Book> Books { get; set; }
+        public DbSet<Book> Book { get; set; }
         public DbSet<Author> Authors { get; set; }
 
-        public void ConfigureServices(IServiceCollection services)
+        public LibraryContext(DbContextOptions<LibraryContext> options)
+            : base(options)
         {
-            services.AddDbContext<LibraryContext>(options =>
-                options.UseSqlite("Data Source=../ressources/library.db;"));
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Book>()
+                .HasOne(e => e.Author)
+                .WithMany(e => e.Books)
+                .HasForeignKey("id_author")
+                .IsRequired();
+        }
+
+
     }
 
 }
