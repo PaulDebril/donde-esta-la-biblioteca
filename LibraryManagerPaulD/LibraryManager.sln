@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "Business
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{5985A45B-E4E4-4A3B-ACE2-6508C135F8B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{43BEC294-205E-4B92-A8AE-B3FE2B9A7579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer.Test", "Tests\BusinessLayer.Test\BusinessLayer.Test.csproj", "{5E17D1A8-D2EC-456E-BE29-6F51F42EC763}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Test", "Tests\BusinessLayer.Test\Services.Test\Services.Test.csproj", "{07DC3558-2773-4D4D-95C8-1ADEE508F217}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,11 +45,23 @@ Global
 		{5985A45B-E4E4-4A3B-ACE2-6508C135F8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5985A45B-E4E4-4A3B-ACE2-6508C135F8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5985A45B-E4E4-4A3B-ACE2-6508C135F8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E17D1A8-D2EC-456E-BE29-6F51F42EC763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E17D1A8-D2EC-456E-BE29-6F51F42EC763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E17D1A8-D2EC-456E-BE29-6F51F42EC763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E17D1A8-D2EC-456E-BE29-6F51F42EC763}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07DC3558-2773-4D4D-95C8-1ADEE508F217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07DC3558-2773-4D4D-95C8-1ADEE508F217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07DC3558-2773-4D4D-95C8-1ADEE508F217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07DC3558-2773-4D4D-95C8-1ADEE508F217}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68F1B015-EAF4-4A3A-8DB9-858E3472C0C1}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5E17D1A8-D2EC-456E-BE29-6F51F42EC763} = {43BEC294-205E-4B92-A8AE-B3FE2B9A7579}
+		{07DC3558-2773-4D4D-95C8-1ADEE508F217} = {43BEC294-205E-4B92-A8AE-B3FE2B9A7579}
 	EndGlobalSection
 EndGlobal
