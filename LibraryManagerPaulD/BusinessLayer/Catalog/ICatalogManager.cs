@@ -9,5 +9,8 @@ namespace BusinessLayer.Catalog
         IEnumerable<Book> DisplayFantasyBooks();
         Book FindBook(int id);
         Book GetTopRatedBook();
+        Book AddBook(Book book);
+        Book UpdateBook(Book book);
+        Book DeleteBook(int id);
     }
 }

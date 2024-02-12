@@ -50,5 +50,20 @@ namespace BusinessLayer.Catalog
             return topRatedBook;
         }
 
+        public Book AddBook(Book book)
+        {
+            return _GenericRepository.Insert(book);
+        }
+
+        public Book UpdateBook(Book book)
+        {
+            return _GenericRepository.Update(book);
+        }
+
+        public Book DeleteBook(int id)
+        {
+            return _GenericRepository.Delete(id);
+        }
+
     }
 }

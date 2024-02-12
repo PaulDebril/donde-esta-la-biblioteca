@@ -20,4 +20,29 @@ public class LibraryRepository : IGenericRepository<Library>
     {
         return _context.Libraries.First(x => x.Id == LibraryId);
     }
+
+    Library IGenericRepository<Library>.Get(int TId)
+    {
+        throw new NotImplementedException();
+    }
+
+    IEnumerable<Library> IGenericRepository<Library>.GetAll()
+    {
+        throw new NotImplementedException();
+    }
+
+    Library IGenericRepository<Library>.Insert(Book book)
+    {
+        throw new NotImplementedException();
+    }
+
+    Library IGenericRepository<Library>.Update(Book book)
+    {
+        throw new NotImplementedException();
+    }
+
+    Library IGenericRepository<Library>.Delete(int id)
+    {
+        throw new NotImplementedException();
+    }
 }

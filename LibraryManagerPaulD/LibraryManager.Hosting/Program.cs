@@ -6,7 +6,6 @@ using DataAccessLayer.Repository;
 using Microsoft.EntityFrameworkCore;
 using Services.Services;
 
-[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 internal class Program
 {
     private static void Main(string[] args)
@@ -20,12 +19,13 @@ internal class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
         builder.Services.AddDbContext<LibraryContext>(options =>
-                    options.UseSqlite("Data Source=/Users/Noa/Documents/GitHub/donde-esta-la-biblioteca/ressources/library.db"));
+                    options.UseSqlite("Data Source=/Users/paul/Documents/GitHub/donde-esta-la-biblioteca/ressources/library.db"));
         builder.Services.AddScoped<ICatalogManager, CatalogManager>();
         builder.Services.AddScoped<ICatalogService, CatalogService>();
         builder.Services.AddScoped<IGenericRepository<Book>, BookRepository>();
         builder.Services.AddScoped<IGenericRepository<Author>, AuthorRepository>();
         builder.Services.AddScoped<IGenericRepository<Library>, LibraryRepository>();
+
         /*
         Les Middleware ajoutés avant le builder seront récupérer par l'application
         */
@@ -48,8 +48,4 @@ internal class Program
         app.Run();
     }
 
-    private string GetDebuggerDisplay()
-    {
-        return ToString();
-    }
 }

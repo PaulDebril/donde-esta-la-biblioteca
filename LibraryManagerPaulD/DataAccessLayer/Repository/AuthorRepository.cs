@@ -23,5 +23,20 @@ namespace DataAccessLayer.Repository
         {
             return _context.Authors.Find(id_author) ?? new Author();
         }
+
+        Author IGenericRepository<Author>.Insert(Book book)
+        {
+            throw new NotImplementedException();
+        }
+
+        Author IGenericRepository<Author>.Update(Book book)
+        {
+            throw new NotImplementedException();
+        }
+
+        Author IGenericRepository<Author>.Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

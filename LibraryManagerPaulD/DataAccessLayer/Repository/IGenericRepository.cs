@@ -7,5 +7,9 @@ namespace DataAccessLayer.Repository
     {
         T Get(int TId);
         IEnumerable<T> GetAll();
+        T Insert(Book book);
+        T Update(Book book);
+        T Delete(int id);
+
     }
 }

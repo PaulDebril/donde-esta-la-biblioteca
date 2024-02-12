@@ -18,6 +18,44 @@ namespace LibraryManager.Hosting
             _catalogManager = catalogManager;
         }
 
+        // Endpoint pour ajouter un nouveau livre
+        [HttpPost("book/add")]
+        public ActionResult<Book> AddBook(Book book)
+        {
+            if (book == null)
+                return BadRequest("Le livre à ajouter est null.");
+
+            _catalogManager.AddBook(book);
+            return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
+        }
+
+        // Endpoint pour mettre à jour un livre existant
+        [HttpPut("book/update/{id}")]
+        public ActionResult<Book> UpdateBook(int id, Book book)
+        {
+            if (id != book.Id)
+                return BadRequest("L'ID du livre dans l'URL ne correspond pas à l'ID du livre dans le corps de la requête.");
+
+            var existingBook = _catalogManager.FindBook(id);
+            if (existingBook == null)
+                return NotFound();
+
+            _catalogManager.UpdateBook(book);
+            return NoContent();
+        }
+
+        // Endpoint pour supprimer un livre
+        [HttpDelete("book/delete/{id}")]
+        public IActionResult DeleteBook(int id)
+        {
+            var existingBook = _catalogManager.FindBook(id);
+            if (existingBook == null)
+                return NotFound();
+
+            _catalogManager.DeleteBook(id);
+            return NoContent();
+        }
+
         // Endpoint pour récupérer tous les livres
         [HttpGet("books")]
         public ActionResult<IEnumerable<Book>> GetBooks()

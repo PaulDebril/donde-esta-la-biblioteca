@@ -20,4 +20,29 @@ public class BookRepository : IGenericRepository<Book>
     {
         return _context.Book.Find(id);
     }
+
+    public Book Insert(Book book)
+    {
+        _context.Book.Add(book);
+        _context.SaveChanges();
+        return book;
+    }
+
+    public Book Update(Book book)
+    {
+        _context.Book.Update(book);
+        _context.SaveChanges();
+        return book;
+    }
+
+    public Book Delete(int id)
+    {
+        var book = _context.Book.First(x => x.Id == id);
+        _context.Book.Remove(book);
+        _context.SaveChanges();
+        return book;
+    }
+
+
+
 }
