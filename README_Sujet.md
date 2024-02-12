@@ -12,6 +12,16 @@ Pensez aussi à regarder les raccourcis utiles en bas de page.
 
 Vous pouvez *Fork* ce repo Git, le cloner en local et travailler directement dedans. 
 
+⚠️ A rendre pour le 25/02, pas de commit au delà.
+
+Me fournir un README avec vos :
+- Nom Prénom + Pseudo Git
+- Contact mail ou Discord 
+
+Passez votre fork en privé, puis ajoutez `ErwannIUT`.
+
+
+
 ## Les mots clefs
 
 - *Solution*
@@ -224,8 +234,11 @@ Pour consulter votre base de données, je vous conseille l'utilisation de [DBeav
 
 ### Etape 6 : TU
 
-Créez un dossier `Tests` et puis un nouveau projet `Services.Test`.
-Créez une classe `CatalogServiceTest`.
+Créez un dossier `Tests` et puis un nouveau projet `BusinessLayer.Test`. Créez une classe `CatalogManagerTest`.
+
+Implémentez un test unitaire sur chaque méthode de votre `CatalogService` en pensant à Mock le retour de votre `BookRepository`pour bien tester unitairement votre méthode.
+
+Créez un dossier `Tests` et puis un nouveau projet `Services.Test`. Créez une classe `CatalogServiceTest`.
 
 Implémentez un test unitaire sur chaque méthode de votre `CatalogService` en pensant à Mock le retour de votre `CatalogManager`pour bien tester unitairement votre méthode.
 
@@ -320,17 +333,18 @@ Les éléments entre crochets sont appelés des attributs. Ils définissent des 
 
 Vous pouvez créé vos propres attributs, mais les attributs par défaut définissent des comportements :
 - `[ApiController]` définit les comportements par défaut d'une API REST
-- `[Route("[controller]")]` définit la route pour accéder à un controller; le `[controller]` désigne le nom de la classe en tant que endpoint 
-- `[HttpGet(Name = "GetWeatherForecast")]` définit la méthode la méthode attendu
+- `[Route("[controller]")]` définit la route pour accéder à un controller; le `[controller]` désigne le nom de la classe en tant que endpoint
+- Ajouter `[Route("{id}")]`  sur une méthode va définir un endpoint `[controller]/{id}`
+- `[HttpGet(Name = "GetWeatherForecast")]` définit le nom de la méthode attendu
 
-Donc pour accéder à cette API, nous utiliserons `GET localhost:53000/WeatherForecast/GetWeatherForecast`. Il existe même des attributs pour l'authentification.
+Donc pour accéder à cette API, nous utiliserons `GET localhost:53000/WeatherForecast`. Il existe même des attributs pour l'authentification.
 
 Après l'explication, place à la pratique.
 
 Créez un fichier `BookController` qui va commprendre les méthodes *GET* suivants :
-- book
+- books
 - book/{id}
-- book/{type}
+- books/{type}
 - book/topRatedBook
 
 Pour tester votre API, installez [Postman](https://www.postman.com/).
@@ -339,13 +353,20 @@ Pour plus d'informations : [Tutoriel ASP.NET Core Web API- Microsoft](https://le
 
 ⚠️ Pensez à commit.
 
-### Etape 8 : Vous allez plus vite que prévu ?
+### Etape 8 : Modifier sa BDD
+
+Ajoutez les endpoints suivants avec les méthodes HTTP correspondantes :
+- add
+- update 
+- delete
+
+Configurez vos repository pour qu'ils sauvegarde bien en bdd après modification.
+
+### Etape 9 : Vous allez plus vite que prévu ?
 
 Améliorer votre bibliothèque :
-- Créez de nouveaux endpoint pour accéder aux différentes tables.
-- Ajoutez une table `Client` pour permettre à un client d'emprunter un livre et d'être black listed.
-- Ajoutez une notion de quantité à votre stock.
-- Permettre à un client d'emprunter des livres, de les rendres.
+- Ajoutez une entité `Stock` et ajouter une notion de quantité (pensez à modifier votre BDD).
+- Ajoutez une table `Client` and `Borrow` pour permettre à un client d'emprunter un livre et d'être black listed.
 
 
 ### Raccourcis utiles 
